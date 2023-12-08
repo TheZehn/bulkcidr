@@ -1,0 +1,57 @@
+<!-- table_template.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CIDR Table</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>CIDR IP Range Table</h2>
+    <table>
+        <tr>
+            <th>CIDR Block</th>
+            <th>First IP</th>
+            <th>Last IP</th>
+        </tr>
+        {% for key, values in data_dict.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ values[0] }}</td>
+            <td>{{ values[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
